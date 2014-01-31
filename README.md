@@ -40,7 +40,7 @@ $ rake db:migrate
 # skip the edit of config/initializers/sorcery.rb
 $ rails g scaffold user email:string crypted_password:string salt:string --migration false
 # You can choose to overwrite or not, it doesn't matter (for the previous command).
-# Update UsersController to accept password and password_confirmation params.
+# Update users_controller.rb to accept password and password_confirmation params.
 # Update views/users/_form.html.erb to use password and password_confirmation fields.
 # Remove encrypted password and salt from view/users/show.html.erb.
 # Update models/user.rb to contain validations and authenticates_with_sorcery! call.
@@ -48,7 +48,14 @@ $ rails g scaffold user email:string crypted_password:string salt:string --migra
 
 # Create login controller
 $ rails g controller UserSessions new create destroy
-
+# Update user_sessions_controller.rb
+# Create views/user_sessions/new.html.erb
+# Create views/user_sessions/_form.html.erb
+# Replace auto-generated routes with:
+#  resources :user_sessions
+#  get 'login' => 'user_sessions#new', :as => :login
+#  post 'logout' => 'user_sessions#destroy', :as => :logout
+# Add require login to users_controller, user_sessions_controller, events_controller
 
 ````
 
