@@ -1,4 +1,6 @@
 Marquee::Application.routes.draw do
+  resources :users
+
   get "calendar/index"
   resources :events
 

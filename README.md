@@ -32,12 +32,22 @@ $ bundle install
 
 # Add Sorcery gem for user login to Gemfile.
 $ bundle install
-$ rails generate sorcery:install remember_me reset_password
+$ rails generate sorcery:install
 $ rake db:migrate
 
 # Follow instructions for basic login:
 # https://github.com/NoamB/sorcery/wiki/Simple-Password-Authentication
+# skip the edit of config/initializers/sorcery.rb
+$ rails g scaffold user email:string crypted_password:string salt:string --migration false
+# You can choose to overwrite or not, it doesn't matter (for the previous command).
+# Update UsersController to accept password and password_confirmation params.
+# Update views/users/_form.html.erb to use password and password_confirmation fields.
+# Remove encrypted password and salt from view/users/show.html.erb.
+# Update models/user.rb to contain validations and authenticates_with_sorcery! call.
+# Create a new user at http://localhost:3000/users/
 
+# Create login controller
+$ rails g controller UserSessions new create destroy
 
 
 ````
