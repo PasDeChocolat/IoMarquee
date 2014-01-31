@@ -21,6 +21,12 @@ $ rake db:migrate
 
 $ rails g controller Calendar index
 
+# Add Bootstrap config to application.js
+# Add Bootstrap config to application.css and rename to application.css.scss
+# Add bootstrap-sass gem to Gemfile
+$ bundle install
+
+
 
 ````
 
