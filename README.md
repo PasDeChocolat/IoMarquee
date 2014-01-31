@@ -26,6 +26,7 @@ $ rails g controller Calendar index
 # Add bootstrap-sass gem to Gemfile
 $ bundle install
 
+# Add Bootstrap Jumbotron example as application layout.
 
 
 ````
