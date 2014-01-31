@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  before_filter :require_login
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
