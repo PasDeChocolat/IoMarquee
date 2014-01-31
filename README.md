@@ -27,6 +27,17 @@ $ rails g controller Calendar index
 $ bundle install
 
 # Add Bootstrap Jumbotron example as application layout.
+# Create partials and render each event in calendar#index.
+# Create separate calendar and application layouts.
+
+# Add Sorcery gem for user login to Gemfile.
+$ bundle install
+$ rails generate sorcery:install remember_me reset_password
+$ rake db:migrate
+
+# Follow instructions for basic login:
+# https://github.com/NoamB/sorcery/wiki/Simple-Password-Authentication
+
 
 
 ````
